@@ -1,24 +1,38 @@
-import logo from './logo.svg';
+import { useState } from 'react';
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import './App.css';
+import { UserContext } from './contexts/Users';
+import { Articles, Login, Nav, SingleArticle, User } from './components/index';
 
 function App() {
+  const [currentUser, setCurrentUser] = useState({});
+
+  const loginHandler = () => {
+    return Object.keys(currentUser).length ? (
+      <>
+        <Nav />
+        <Routes>
+          <Route path="/" element={<User />} />
+          <Route path="/articles" element={<Articles />} />
+          <Route path="/articles/:article_id" element={<SingleArticle />} />
+        </Routes>
+      </>
+    ) : (
+      <Routes>
+        <Route path="/" element={<Login />} />
+      </Routes>
+    );
+  };
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <BrowserRouter>
+      <div>
+        <h1>NC News</h1>
+        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
+          {loginHandler()}
+        </UserContext.Provider>
+      </div>
+    </BrowserRouter>
   );
 }
 
