@@ -1,14 +1,14 @@
-import { useState } from 'react';
-import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { UserContext } from './contexts/Users';
+import { UserContext, UserProvider } from './contexts/Users';
 import { Articles, Login, Nav, SingleArticle, User } from './components/index';
+import { useContext } from 'react';
 
 function App() {
-  const [currentUser, setCurrentUser] = useState({});
+  const { isLoggedIn } = useContext(UserContext);
 
   const loginHandler = () => {
-    return Object.keys(currentUser).length ? (
+    return isLoggedIn ? (
       <>
         <Nav />
         <Routes>
@@ -27,10 +27,10 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <h1>NC News</h1>
-        <UserContext.Provider value={{ currentUser, setCurrentUser }}>
-          {loginHandler()}
-        </UserContext.Provider>
+        <Link to="/">
+          <h1>NC News</h1>
+        </Link>
+        {loginHandler()}
       </div>
     </BrowserRouter>
   );
