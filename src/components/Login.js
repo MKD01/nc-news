@@ -13,11 +13,9 @@ const Login = () => {
   const loginHandler = (event) => {
     event.preventDefault();
     let username = event.target.username.value;
-    if (username) {
-      getUserByUsername(username).then((res) => {
-        setCurrentUser(res);
-      });
-    }
+    getUserByUsername(username).then((res) => {
+      setCurrentUser(res);
+    });
   };
 
   const registerForm = () => {

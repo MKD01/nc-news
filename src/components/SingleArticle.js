@@ -21,8 +21,10 @@ const SingleArticle = () => {
         <h3>Topic: {article.topic}</h3>
         <h2>{article.title}</h2>
         <p>{article.body}</p>
-        <a id="votes">Votes: {article.votes}</a>
-        <a id="date">Posted on: {shortDate(article.created_at)}</a>
+        <div>
+          <p id="votes">Votes: {article.votes}</p>
+          <p id="date">Posted at: {shortDate(article.created_at)}</p>
+        </div>
       </div>
       <Comments article_id={article_id} />
     </>

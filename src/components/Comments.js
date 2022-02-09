@@ -21,8 +21,8 @@ const Comments = ({ article_id }) => {
             <li key={comment.comment_id}>
               <h3>{comment.author}</h3>
               <p>{comment.body}</p>
-              <a>Votes: {comment.votes}</a>
-              <a>Posted on: {shortDate(comment.created_at)}</a>
+              <p>Votes: {comment.votes}</p>
+              <p>Posted on: {shortDate(comment.created_at)}</p>
             </li>
           );
         })}

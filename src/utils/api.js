@@ -27,3 +27,14 @@ export const getCommentsByArticleId = (article_id) => {
     return res.data.comments;
   });
 };
+
+export const postCommentByArticleId = (article_id, currUser, comment) => {
+  return api
+    .post(`/articles/${article_id}/comments`, {
+      username: currUser,
+      body: comment,
+    })
+    .then((res) => {
+      return res.data.comment;
+    });
+};
