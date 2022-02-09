@@ -10,10 +10,12 @@ export const getUserByUsername = (username) => {
   });
 };
 
-export const getArticles = () => {
-  return api.get(`/articles`).then((res) => {
-    return res.data.articles;
-  });
+export const getArticles = (topic, sort_by, order_by) => {
+  return api
+    .get(`/articles`, { params: { topic, sort_by, order_by } })
+    .then((res) => {
+      return res.data.articles;
+    });
 };
 
 export const getArticleById = (article_id) => {
@@ -37,4 +39,10 @@ export const postCommentByArticleId = (article_id, currUser, comment) => {
     .then((res) => {
       return res.data.comment;
     });
+};
+
+export const getTopics = () => {
+  return api.get(`/topics`).then((res) => {
+    return res.data.topics;
+  });
 };
