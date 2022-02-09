@@ -1,7 +1,16 @@
-import React from 'react';
+import React, { useContext } from 'react';
+import { UserContext } from '../contexts/Users';
 
 const User = () => {
-  return <div></div>;
+  const { currentUser } = useContext(UserContext);
+
+  return (
+    <div>
+      <h2>Welcome {currentUser.name}</h2>
+      <h2>{currentUser.username}</h2>
+      <img src={currentUser.avatar_url} />
+    </div>
+  );
 };
 
 export default User;
