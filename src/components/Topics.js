@@ -17,10 +17,10 @@ const Topics = ({ setSelectedTopic, selectedTopic }) => {
   return (
     <div className="dropdown">
       <button className="dropbutton">
-        {selectedTopic.length ? selectedTopic : 'Unselected'}
+        {selectedTopic.length ? selectedTopic : 'All'}
       </button>
       <div className="dropdown-content">
-        <a onClick={() => setSelectedTopic('')}>Unselected</a>
+        <a onClick={() => setSelectedTopic('')}>All</a>
         {topics.map((topic) => {
           return (
             <a key={topic.slug} onClick={() => topicHandler(topic.slug)}>

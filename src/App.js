@@ -1,6 +1,6 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
 import './App.css';
-import { UserContext, UserProvider } from './contexts/Users';
+import { UserContext } from './contexts/Users';
 import { Articles, Login, Nav, SingleArticle, User } from './components/index';
 import { useContext } from 'react';
 

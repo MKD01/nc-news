@@ -47,8 +47,8 @@ export const postCommentByArticleId = (article_id, currUser, comment) => {
     });
 };
 
-export const patchArticleVotes = (article_id) => {
-  return api.patch(`/articles/${article_id}`, { inc_votes: 1 });
+export const patchComponentVotes = (component_name, component_id, vote) => {
+  return api.patch(`/${component_name}/${component_id}`, { inc_votes: vote });
 };
 
 export const deleteComment = (comment_id) => {

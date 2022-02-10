@@ -2,12 +2,12 @@ import React, { useContext } from 'react';
 import { UserContext } from '../contexts/Users';
 import { deleteComment } from '../utils/api';
 
-const DeleteComment = ({ setDeletedCommentId, comment_id, author }) => {
+const DeleteComment = ({ setDeletedComment, comment_id, author }) => {
   const { currentUser } = useContext(UserContext);
 
   const deleteHandler = () => {
     deleteComment(comment_id);
-    setDeletedCommentId(comment_id);
+    setDeletedComment(true);
   };
 
   const isCurrentUserCheck = () => {
