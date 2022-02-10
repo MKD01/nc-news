@@ -3,20 +3,28 @@ import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
 import { shortDate } from '../utils/shortDate';
 import OrderBy from './OrderBy';
+import PageCount from './PageCount';
 import SortBy from './SortBy';
 import Topics from './Topics';
+import Votes from './Votes';
 
 const Articles = () => {
   const [selectedTopic, setSelectedTopic] = useState('');
   const [selectedSortBy, setSelectedSortBy] = useState('created_at');
   const [selectedOrderBy, setSelectedOrderBy] = useState('DESC');
   const [articleList, setArticleList] = useState([]);
+  const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
-    getArticles(selectedTopic, selectedSortBy, selectedOrderBy).then((res) => {
+    getArticles(
+      selectedTopic,
+      selectedSortBy,
+      selectedOrderBy,
+      currentPage
+    ).then((res) => {
       setArticleList(res);
     });
-  }, [selectedTopic, selectedSortBy, selectedOrderBy]);
+  }, [selectedTopic, selectedSortBy, selectedOrderBy, currentPage]);
 
   return (
     <div>
@@ -42,12 +50,13 @@ const Articles = () => {
               </Link>
               <h3>Topic: {article.topic}</h3>
               <h3>Comments: {article.comment_count}</h3>
-              <button>Votes: {article.votes}</button>
+              <Votes votes={article.votes} article_id={article.article_id} />
               <p id="date">Posted at: {shortDate(article.created_at)}</p>
             </li>
           );
         })}
       </ul>
+      <PageCount setCurrentPage={setCurrentPage} />
     </div>
   );
 };

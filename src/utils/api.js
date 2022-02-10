@@ -10,9 +10,9 @@ export const getUserByUsername = (username) => {
   });
 };
 
-export const getArticles = (topic, sort_by, order_by) => {
+export const getArticles = (topic, sort_by, order_by, p) => {
   return api
-    .get(`/articles`, { params: { topic, sort_by, order_by } })
+    .get(`/articles`, { params: { topic, sort_by, order_by, p } })
     .then((res) => {
       return res.data.articles;
     });
@@ -25,8 +25,14 @@ export const getArticleById = (article_id) => {
 };
 
 export const getCommentsByArticleId = (article_id) => {
-  return api.get(`/articles/${article_id}/comments`).then((res) => {
+  return api.get(`/articles/${article_id}/comments?limit=100`).then((res) => {
     return res.data.comments;
+  });
+};
+
+export const getTopics = () => {
+  return api.get(`/topics`).then((res) => {
+    return res.data.topics;
   });
 };
 
@@ -41,8 +47,16 @@ export const postCommentByArticleId = (article_id, currUser, comment) => {
     });
 };
 
-export const getTopics = () => {
-  return api.get(`/topics`).then((res) => {
-    return res.data.topics;
+export const patchArticleVotes = (article_id) => {
+  return api.patch(`/articles/${article_id}`, { inc_votes: 1 });
+};
+
+export const deleteComment = (comment_id) => {
+  return api.delete(`comments/${comment_id}`);
+};
+
+export const getArticlesCount = () => {
+  return api.get(`/articles?limit=1844674407370955161`).then((res) => {
+    return res.data.articles.length;
   });
 };

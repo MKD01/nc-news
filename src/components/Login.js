@@ -24,10 +24,10 @@ const Login = () => {
         <div>
           <form>
             <label>
-              Name: <input id="name"></input>
+              Name: <input id="name" required></input>
             </label>
             <label>
-              Username: <input id="username"></input>
+              Username: <input id="username" required></input>
             </label>
             <label>
               Avatar: <input id="avatar_url"></input>
@@ -47,7 +47,7 @@ const Login = () => {
         }}
       >
         <label>
-          Username: <input id="username"></input>
+          Username: <input id="username" required></input>
         </label>
         <button>Login</button>
       </form>
