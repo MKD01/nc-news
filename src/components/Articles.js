@@ -9,7 +9,7 @@ import Topics from './Topics';
 const Articles = () => {
   const [selectedTopic, setSelectedTopic] = useState('');
   const [selectedSortBy, setSelectedSortBy] = useState('created_at');
-  const [selectedOrderBy, setSelectedOrderBy] = useState('ASC');
+  const [selectedOrderBy, setSelectedOrderBy] = useState('DESC');
   const [articleList, setArticleList] = useState([]);
 
   useEffect(() => {
