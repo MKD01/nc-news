@@ -1,9 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { getCommentsByArticleId } from '../utils/api';
 import { shortDate } from '../utils/shortDate';
-import CreateComment from './CreateComment';
-import DeleteComment from './DeleteComment';
-import UpVotes from './UpVotes';
+import { CreateComment, DeleteComment, Votes } from './index';
 
 const Comments = ({ article_id }) => {
   const [articleComments, setArticleComments] = useState([]);
@@ -30,7 +28,7 @@ const Comments = ({ article_id }) => {
               <p>{comment.body}</p>
               <div>
                 <p>Posted on: {shortDate(comment.created_at)}</p>
-                <UpVotes
+                <Votes
                   component_name={'comments'}
                   votes={comment.votes}
                   component_id={comment.comment_id}

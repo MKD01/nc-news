@@ -55,8 +55,10 @@ export const deleteComment = (comment_id) => {
   return api.delete(`comments/${comment_id}`);
 };
 
-export const getArticlesCount = () => {
-  return api.get(`/articles?limit=1844674407370955161`).then((res) => {
-    return res.data.articles.length;
-  });
+export const getArticlesCount = (topic) => {
+  return api
+    .get(`/articles`, { params: { limit: 1844674407370955161, topic } })
+    .then((res) => {
+      return res.data.articles.length;
+    });
 };

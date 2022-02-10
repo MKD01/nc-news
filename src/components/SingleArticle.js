@@ -3,7 +3,7 @@ import { useParams } from 'react-router-dom';
 import { useState } from 'react/cjs/react.development';
 import { getArticleById } from '../utils/api';
 import { shortDate } from '../utils/shortDate';
-import Comments from './Comments';
+import { Comments } from './index';
 
 const SingleArticle = () => {
   const { article_id } = useParams();

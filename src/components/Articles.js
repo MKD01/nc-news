@@ -2,21 +2,17 @@ import React, { useEffect, useState } from 'react';
 import { Link } from 'react-router-dom';
 import { getArticles } from '../utils/api';
 import { shortDate } from '../utils/shortDate';
-import OrderBy from './OrderBy';
-import PageCount from './PageCount';
-import SortBy from './SortBy';
-import Topics from './Topics';
-import UpVotes from './UpVotes';
+import { OrderBy, PageCount, SortBy, Topics, Votes } from './index';
 
 const Articles = () => {
   const [articleList, setArticleList] = useState([]);
   const [selectedTopic, setSelectedTopic] = useState('');
   const [selectedSortBy, setSelectedSortBy] = useState('created_at');
   const [selectedOrderBy, setSelectedOrderBy] = useState('DESC');
-
   const [currentPage, setCurrentPage] = useState(1);
 
   useEffect(() => {
+    setArticleList([]);
     getArticles(
       selectedTopic,
       selectedSortBy,
@@ -28,7 +24,7 @@ const Articles = () => {
   }, [selectedTopic, selectedSortBy, selectedOrderBy, currentPage]);
 
   return (
-    <div>
+    <>
       <Topics
         selectedTopic={selectedTopic}
         setSelectedTopic={setSelectedTopic}
@@ -41,30 +37,39 @@ const Articles = () => {
         selectedOrderBy={selectedOrderBy}
         setSelectedOrderBy={setSelectedOrderBy}
       />
-      <ul>
-        {articleList.map((article) => {
-          return (
-            <li key={article.article_id}>
-              <Link to={`/articles/${article.article_id}`}>
-                <h2>{article.author}</h2>
-                <h2>{article.title}</h2>
-              </Link>
-              <h3>Topic: {article.topic}</h3>
-              <h3>Comments: {article.comment_count}</h3>
-              <div>
-                <p id="date">Posted at: {shortDate(article.created_at)}</p>
-                <UpVotes
-                  component_name={'articles'}
-                  votes={article.votes}
-                  component_id={article.article_id}
-                />
-              </div>
-            </li>
-          );
-        })}
-      </ul>
-      <PageCount setCurrentPage={setCurrentPage} />
-    </div>
+      {articleList.length ? (
+        <div>
+          <ul>
+            {articleList.map((article) => {
+              return (
+                <li key={article.article_id}>
+                  <Link to={`/articles/${article.article_id}`}>
+                    <h2>{article.author}</h2>
+                    <h2>{article.title}</h2>
+                  </Link>
+                  <h3>Topic: {article.topic}</h3>
+                  <h3>Comments: {article.comment_count}</h3>
+                  <div>
+                    <p id="date">Posted at: {shortDate(article.created_at)}</p>
+                    <Votes
+                      component_name={'articles'}
+                      votes={article.votes}
+                      component_id={article.article_id}
+                    />
+                  </div>
+                </li>
+              );
+            })}
+          </ul>
+        </div>
+      ) : (
+        <p>Is loading...</p>
+      )}
+      <PageCount
+        selectedTopic={selectedTopic}
+        setCurrentPage={setCurrentPage}
+      />
+    </>
   );
 };
 

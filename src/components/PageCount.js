@@ -1,14 +1,14 @@
 import React, { useEffect, useState } from 'react';
 import { getArticlesCount } from '../utils/api';
 
-const PageCount = ({ setCurrentPage }) => {
+const PageCount = ({ selectedTopic, setCurrentPage }) => {
   const [maxPageNum, setMaxPageNum] = useState(0);
 
   useEffect(() => {
-    getArticlesCount().then((res) => {
+    getArticlesCount(selectedTopic).then((res) => {
       setMaxPageNum(Math.ceil(res / 10));
     });
-  }, []);
+  }, [selectedTopic]);
 
   const pageNumHandler = (num) => {
     setCurrentPage(num);
