@@ -18,7 +18,7 @@ const CreateComment = ({ setArticleComments, article_id }) => {
 
   return (
     <div>
-      <form onSubmit={(event) => commentHandler(event)}>
+      <form onSubmit={commentHandler}>
         <label>
           Comment: <input type="text" id="comment" required></input>
         </label>

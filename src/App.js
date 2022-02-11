@@ -1,5 +1,5 @@
 import { BrowserRouter, Link, Route, Routes } from 'react-router-dom';
-import './App.css';
+import './styles/App.scss';
 import { UserContext } from './contexts/Users';
 import { Articles, Login, Nav, SingleArticle, User } from './components/index';
 import { useContext } from 'react';

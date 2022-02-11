@@ -9,7 +9,10 @@ const Articles = () => {
   const [selectedTopic, setSelectedTopic] = useState('');
   const [selectedSortBy, setSelectedSortBy] = useState('created_at');
   const [selectedOrderBy, setSelectedOrderBy] = useState('DESC');
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState({
+    page: 1,
+    maxPage: 1,
+  });
 
   useEffect(() => {
     setArticleList([]);
@@ -17,7 +20,7 @@ const Articles = () => {
       selectedTopic,
       selectedSortBy,
       selectedOrderBy,
-      currentPage
+      currentPage.page
     ).then((res) => {
       setArticleList(res);
     });
@@ -39,6 +42,7 @@ const Articles = () => {
       />
       {articleList.length ? (
         <div>
+          <p>{`Page: ${currentPage.page} / ${currentPage.maxPage} `}</p>
           <ul>
             {articleList.map((article) => {
               return (
@@ -63,10 +67,11 @@ const Articles = () => {
           </ul>
         </div>
       ) : (
-        <p>Is loading...</p>
+        <p>Loading...</p>
       )}
       <PageCount
         selectedTopic={selectedTopic}
+        currentPage={currentPage}
         setCurrentPage={setCurrentPage}
       />
     </>

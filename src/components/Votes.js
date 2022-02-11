@@ -16,9 +16,9 @@ const Votes = ({ component_name, votes, component_id }) => {
 
   return (
     <div>
-      <button onClick={upVotesHandler}>Up Vote</button>
+      <button onClick={upVotesHandler}>↑</button>
       <a>{` ${votes + votesChange} `}</a>
-      <button onClick={DownVotesHandler}>Down Vote</button>
+      <button onClick={DownVotesHandler}>↓</button>
     </div>
   );
 };
