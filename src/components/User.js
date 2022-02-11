@@ -5,9 +5,8 @@ const User = () => {
   const { currentUser } = useContext(UserContext);
 
   return (
-    <div>
+    <div className="user-container">
       <h2>Welcome {currentUser.name}</h2>
-      <h2>{currentUser.username}</h2>
       <img src={currentUser.avatar_url} />
     </div>
   );

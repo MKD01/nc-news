@@ -29,8 +29,8 @@ function App() {
   return (
     <BrowserRouter>
       <div>
-        <Link to="/">
-          <h1>NC News</h1>
+        <Link id="header" className="glow" to="/">
+          <h1 id="nc-news">NC News</h1>
         </Link>
         {loginHandler()}
       </div>

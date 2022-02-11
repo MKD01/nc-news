@@ -4,6 +4,7 @@ import { useState } from 'react/cjs/react.development';
 import { getArticleById } from '../utils/api';
 import { shortDate } from '../utils/shortDate';
 import { Comments } from './index';
+import Votes from './Votes';
 
 const SingleArticle = () => {
   const { article_id } = useParams();
@@ -22,7 +23,11 @@ const SingleArticle = () => {
         <h2>{article.title}</h2>
         <p>{article.body}</p>
         <div>
-          <p id="votes">Votes: {article.votes}</p>
+          <Votes
+            component_name={'articles'}
+            votes={article.votes}
+            component_id={article.article_id}
+          />
           <p id="date">Posted at: {shortDate(article.created_at)}</p>
         </div>
       </div>

@@ -10,10 +10,14 @@ const Nav = () => {
   };
 
   return (
-    <div>
-      <Link to="/">{currentUser.username}</Link>
-      <Link to="articles">Articles</Link>
-      <Link to="/" onClick={logoutHandler}>
+    <div className="nav">
+      <Link className="nav-links" to="/">
+        {currentUser.username}
+      </Link>
+      <Link className="nav-links" to="articles">
+        Articles
+      </Link>
+      <Link className="nav-links" to="/" onClick={logoutHandler}>
         Logout
       </Link>
     </div>

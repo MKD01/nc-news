@@ -28,40 +28,46 @@ const Articles = () => {
 
   return (
     <>
-      <Topics
-        selectedTopic={selectedTopic}
-        setSelectedTopic={setSelectedTopic}
-      />
-      <SortBy
-        selectedSortBy={selectedSortBy}
-        setSelectedSortBy={setSelectedSortBy}
-      />
-      <OrderBy
-        selectedOrderBy={selectedOrderBy}
-        setSelectedOrderBy={setSelectedOrderBy}
-      />
+      <div className="filter-options">
+        <Topics
+          selectedTopic={selectedTopic}
+          setSelectedTopic={setSelectedTopic}
+        />
+        <SortBy
+          selectedSortBy={selectedSortBy}
+          setSelectedSortBy={setSelectedSortBy}
+        />
+        <OrderBy
+          selectedOrderBy={selectedOrderBy}
+          setSelectedOrderBy={setSelectedOrderBy}
+        />
+      </div>
       {articleList.length ? (
-        <div>
+        <div className="articles-container">
           <p>{`Page: ${currentPage.page} / ${currentPage.maxPage} `}</p>
           <ul>
             {articleList.map((article) => {
               return (
-                <li key={article.article_id}>
-                  <Link to={`/articles/${article.article_id}`}>
-                    <h2>{article.author}</h2>
-                    <h2>{article.title}</h2>
-                  </Link>
-                  <h3>Topic: {article.topic}</h3>
-                  <h3>Comments: {article.comment_count}</h3>
-                  <div>
-                    <p id="date">Posted at: {shortDate(article.created_at)}</p>
-                    <Votes
-                      component_name={'articles'}
-                      votes={article.votes}
-                      component_id={article.article_id}
-                    />
-                  </div>
-                </li>
+                <div className="single-article">
+                  <li key={article.article_id}>
+                    <Link to={`/articles/${article.article_id}`}>
+                      <h2>{article.author}</h2>
+                      <h2>{article.title}</h2>
+                    </Link>
+                    <h3>Topic: {article.topic}</h3>
+                    <h3>Comments: {article.comment_count}</h3>
+                    <div>
+                      <p id="date">
+                        Posted at: {shortDate(article.created_at)}
+                      </p>
+                      <Votes
+                        component_name={'articles'}
+                        votes={article.votes}
+                        component_id={article.article_id}
+                      />
+                    </div>
+                  </li>
+                </div>
               );
             })}
           </ul>

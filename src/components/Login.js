@@ -21,17 +21,18 @@ const Login = () => {
   const registerForm = () => {
     if (registerSelected) {
       return (
-        <div>
+        <div className="register">
           <form>
             <label>
-              Name: <input id="name" required></input>
+              <input id="name" placeholder="Name" required></input>
             </label>
             <label>
-              Username: <input id="username" required></input>
+              <input id="username" placeholder="Username" required></input>
             </label>
             <label>
-              Avatar: <input id="avatar_url"></input>
+              <input id="avatar_url" placeholder="Avatar Url"></input>
             </label>
+            <button>Register</button>
           </form>
         </div>
       );
@@ -39,19 +40,22 @@ const Login = () => {
   };
 
   return (
-    <div>
+    <div className="login">
       <h1>Login</h1>
       <form
+        id="login-form"
         onSubmit={(event) => {
           loginHandler(event);
         }}
       >
         <label>
-          Username: <input id="username" required></input>
+          <input id="username" placeholder="Username" required></input>
         </label>
         <button>Login</button>
       </form>
-      <button onClick={registerHandler}>Register</button>
+      <button id="create-new-account-button" onClick={registerHandler}>
+        Create New Account
+      </button>
       {registerForm()}
     </div>
   );

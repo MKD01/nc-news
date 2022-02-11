@@ -14,7 +14,7 @@ const PageCount = ({ selectedTopic, currentPage, setCurrentPage }) => {
   };
 
   return (
-    <div>
+    <div className="pages">
       {Array.from({ length: currentPage.maxPage }, (v, i) => i + 1).map(
         (num) => {
           return (
