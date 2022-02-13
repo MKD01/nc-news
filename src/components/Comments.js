@@ -15,12 +15,12 @@ const Comments = ({ article_id }) => {
   }, [setArticleComments, deletedComment]);
 
   return (
-    <div>
+    <div className="comments">
       <CreateComment
         setArticleComments={setArticleComments}
         article_id={article_id}
       />
-      <ul>
+      <ul className="comments-section">
         {articleComments.map((comment) => {
           return (
             <li key={comment.comment_id}>

@@ -18,7 +18,7 @@ const SingleArticle = () => {
 
   return (
     <>
-      <div>
+      <div className="single-article-container">
         <h3>Topic: {article.topic}</h3>
         <h2>{article.title}</h2>
         <p>{article.body}</p>

@@ -15,9 +15,7 @@ const SortBy = ({ selectedSortBy, setSelectedSortBy }) => {
 
   return (
     <div className="dropdown">
-      <button className="dropbutton">
-        {selectedSortBy.length ? sortByNames[selectedSortBy] : 'Unselected'}
-      </button>
+      <button className="dropbutton">{sortByNames[selectedSortBy]}</button>
       <div className="dropdown-content">
         <a onClick={() => sortByHandler('created_at')}>Posted at</a>
         <a onClick={() => sortByHandler('title')}>Name</a>

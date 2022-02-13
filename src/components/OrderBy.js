@@ -15,7 +15,7 @@ const OrderBy = ({ selectedOrderBy, setSelectedOrderBy }) => {
   return (
     <div className="dropdown">
       <button className="dropbutton" onClick={(event) => orderByHandler(event)}>
-        {selectedOrderBy}
+        Order By: {selectedOrderBy}
       </button>
     </div>
   );

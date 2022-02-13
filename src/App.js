@@ -15,13 +15,19 @@ function App() {
           <Route path="/" element={<User />} />
           <Route path="/articles" element={<Articles />} />
           <Route path="/articles/:article_id" element={<SingleArticle />} />
-          <Route path="*" element={<h1>There's nothing here :(</h1>} />
+          <Route
+            path="*"
+            element={<h1 className="error-page">There's nothing here :(</h1>}
+          />
         </Routes>
       </>
     ) : (
       <Routes>
         <Route path="/" element={<Login />} />
-        <Route path="*" element={<h1>There's nothing here :(</h1>} />
+        <Route
+          path="*"
+          element={<h1 className="error-page">There's nothing here :(</h1>}
+        />
       </Routes>
     );
   };

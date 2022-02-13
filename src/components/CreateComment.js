@@ -17,10 +17,15 @@ const CreateComment = ({ setArticleComments, article_id }) => {
   };
 
   return (
-    <div>
+    <div className="comment-form">
       <form onSubmit={commentHandler}>
         <label>
-          Comment: <input type="text" id="comment" required></input>
+          <input
+            type="text"
+            id="comment"
+            placeholder="Comment"
+            required
+          ></input>
         </label>
         <button>Comment</button>
       </form>
