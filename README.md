@@ -52,4 +52,4 @@ $ npm start
 
 ## Logging in:
 
-- Currently only existing users can login and the login page is not fully implemented as of yet. To login you can use the username `tickle122`
+- Currently only existing users can login and the registration form is not fully implemented as of yet. To login you can use the username `tickle122`
