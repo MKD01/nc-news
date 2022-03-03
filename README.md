@@ -6,7 +6,7 @@
 
 # Front-End
 
-- **Front-End - Hosted link:** ---- need link ---
+- **Front-End - Hosted link:** https://mkd-nc-news.netlify.app/
 
 # Back-End
 
