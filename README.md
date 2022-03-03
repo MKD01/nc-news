@@ -1,70 +1,59 @@
-# Getting Started with Create React App
+# **NC News - Front End**
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## **Northcoders Group Project**
 
-## Available Scripts
+---
 
-In the project directory, you can run:
+# Front-End
 
-### `npm start`
+- **Front-End - Hosted version Link:** ---- need link ----
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+# Back-End
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+- **Back-End - Hosted version Link:** https://mkd-nc-news.herokuapp.com/api
+- **Back-End - Git-Hub Repo Link:** ---- need link ----
 
-### `npm test`
+# Description
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+This is a front-end React application which connects to the backend API & database (link above).
 
-### `npm run build`
+'NC News' is a news app allowing its users to login, view articles and veiw all the comments attached to each article. Upon successfully logging the user will be greeted with a Users page, displaying a friendly greeting and the users profile photo(if provided when registering). The articles page can selected from the navigation bar at the top of the page. The articles can be filtered using the three filtering options at the top of the page and the user can traverse the many articles available using page numbers at the bottom of the page. Users can also upvote or downvote articles if they wish and upon selecting an article will display the article and all its comments. users can add a comment on the article as well as upvote or downvote any other comment.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+This app was built using React.js, and styled with Sass.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+There is a back-end API version of this app, which this app connects to and interacts with, available at: https://accessapp-be.herokuapp.com/api/
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+# How to run this project locally
 
-### `npm run eject`
+## Minimum requirements:
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
+- In order to run this project, please ensure you have `Node` installed, at least version v16.x onwards.
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+## Clone the repo:
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
+- In your teminal CLI:
 
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
+```
+$ git clone https://github.com/MKD01/accessapp-fe.git
+$ cd accessapp-fe
+```
 
-## Learn More
+## Install dependencies:
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+- Required dependencies will be pulled from the `package.json` file. In your teminal CLI:
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+```
+$ npm install
+```
 
-### Code Splitting
+## Run the app:
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
+- You can now run the app with the following command in the CLI, this will load the app in your Browser for you to use:
 
-### Analyzing the Bundle Size
+```
+$ npm start
+```
 
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
+## Logging in:
 
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+- Currently only existing users can login and the login page is not fully implemented as of yet. To login you can use the username `tickle122`
