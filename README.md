@@ -1,6 +1,6 @@
 # **NC News - Front End**
 
-## **Northcoders Group Project**
+## **Northcoders Project**
 
 ---
 
