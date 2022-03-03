@@ -25,7 +25,7 @@ There is a back-end API version of this app, which this app connects to and inte
 
 ## Minimum requirements:
 
-- In order to run this project, please ensure you have `Node` installed, at least version v16.x onwards.
+- In order to run this project, please ensure you have `Node` version v16.x onwards.
 
 ## Clone the repo:
 
