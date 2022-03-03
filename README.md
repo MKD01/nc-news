@@ -1,6 +1,6 @@
 # **NC News - Front End**
 
-# **Build By Mohammed Kabir Dastgir**
+# **Built By Mohammed Kabir Dastgir**
 
 ---
 
