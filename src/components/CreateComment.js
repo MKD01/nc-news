@@ -1,6 +1,6 @@
-import React, { useContext } from 'react';
-import { UserContext } from '../contexts/Users';
-import { postCommentByArticleId } from '../utils/api';
+import React, { useContext } from "react";
+import { UserContext } from "../contexts/Users";
+import { postCommentByArticleId } from "../utils/api";
 
 const CreateComment = ({ setArticleComments, article_id }) => {
   const { currentUser } = useContext(UserContext);
@@ -11,19 +11,19 @@ const CreateComment = ({ setArticleComments, article_id }) => {
     postCommentByArticleId(article_id, currentUser.username, comment).then(
       (res) => {
         setArticleComments((currentComments) => [res, ...currentComments]);
-        event.target.comment.value = '';
+        event.target.comment.value = "";
       }
     );
   };
 
   return (
-    <div className="comment-form">
+    <div className='comment-form'>
       <form onSubmit={commentHandler}>
         <label>
           <input
-            type="text"
-            id="comment"
-            placeholder="Comment"
+            type='text'
+            id='comment'
+            placeholder='Comment'
             required
           ></input>
         </label>

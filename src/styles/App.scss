@@ -1,8 +1,8 @@
-@use './filter-options';
-@use './login';
-@use './users';
-@use './articles';
-@use './single-article';
+@use "./filter-options";
+@use "./login";
+@use "./users";
+@use "./articles";
+@use "./single-article";
 
 * {
   padding: 0;
@@ -21,7 +21,7 @@ body {
   width: 60%;
 
   .nav-links {
-    margin: auto;
+    margin: 1rem auto;
     align-items: center;
     text-align: center;
     text-decoration: none;
@@ -30,7 +30,7 @@ body {
 }
 
 #header {
-  margin: auto;
+  margin: 1rem auto;
   display: flex;
   align-items: center;
   width: 60%;

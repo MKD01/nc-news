@@ -1,7 +1,7 @@
-import React, { useEffect, useState } from 'react';
-import { getCommentsByArticleId } from '../utils/api';
-import { shortDate } from '../utils/shortDate';
-import { CreateComment, DeleteComment, Votes } from './index';
+import React, { useEffect, useState } from "react";
+import { getCommentsByArticleId } from "../utils/api";
+import { shortDate } from "../utils/shortDate";
+import { CreateComment, DeleteComment, Votes } from "./index";
 
 const Comments = ({ article_id }) => {
   const [articleComments, setArticleComments] = useState([]);
@@ -15,21 +15,21 @@ const Comments = ({ article_id }) => {
   }, [setArticleComments, deletedComment]);
 
   return (
-    <div className="comments">
+    <div className='comments'>
       <CreateComment
         setArticleComments={setArticleComments}
         article_id={article_id}
       />
-      <ul className="comments-section">
+      <ul className='comments-section'>
         {articleComments.map((comment) => {
           return (
             <li key={comment.comment_id}>
-              <h3>{comment.author}</h3>
-              <p>{comment.body}</p>
+              <h3>Author: {comment.author}</h3>
+              <p className='body'>{comment.body}</p>
               <div>
                 <p>Posted on: {shortDate(comment.created_at)}</p>
                 <Votes
-                  component_name={'comments'}
+                  component_name={"comments"}
                   votes={comment.votes}
                   component_id={comment.comment_id}
                 />

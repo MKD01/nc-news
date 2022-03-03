@@ -1,5 +1,5 @@
-import React, { useState } from 'react';
-import { patchComponentVotes } from '../utils/api';
+import React, { useState } from "react";
+import { patchComponentVotes } from "../utils/api";
 
 const Votes = ({ component_name, votes, component_id }) => {
   const [votesChange, setVotesChange] = useState(0);
@@ -16,9 +16,9 @@ const Votes = ({ component_name, votes, component_id }) => {
 
   return (
     <div>
-      <button onClick={upVotesHandler}>↑</button>
+      <button onClick={upVotesHandler}>👍🏽</button>
       <a>{` ${votes + votesChange} `}</a>
-      <button onClick={DownVotesHandler}>↓</button>
+      <button onClick={DownVotesHandler}>👎🏽</button>
     </div>
   );
 };
