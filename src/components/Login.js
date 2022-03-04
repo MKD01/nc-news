@@ -5,9 +5,21 @@ import { getUserByUsername } from "../utils/api";
 const Login = () => {
   const { setCurrentUser } = useContext(UserContext);
   const [registerSelected, setRegisterSelected] = useState(false);
+  const [registrationCheck, setRegistrationCheck] = useState(false);
 
-  const registerHandler = () => {
+  const displayRegisterHandler = () => {
     setRegisterSelected((currSelected) => !currSelected);
+  };
+
+  const registerHandler = (event) => {
+    event.preventDefault();
+    setRegistrationCheck(true);
+  };
+
+  const registrationMessage = () => {
+    if (registrationCheck) {
+      return <h3>Registration feature to be added soon...</h3>;
+    }
   };
 
   const loginHandler = (event) => {
@@ -37,8 +49,9 @@ const Login = () => {
             <label>
               <input id='avatar_url' placeholder='Avatar Url'></input>
             </label>
-            <button>Register</button>
+            <button onClick={registerHandler}>Register</button>
           </form>
+          {registrationMessage()}
         </div>
       );
     }
@@ -58,7 +71,7 @@ const Login = () => {
         </label>
         <button>Login</button>
       </form>
-      <button id='create-new-account-button' onClick={registerHandler}>
+      <button id='create-new-account-button' onClick={displayRegisterHandler}>
         Create New Account
       </button>
       {registerForm()}

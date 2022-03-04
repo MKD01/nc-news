@@ -48,8 +48,8 @@ const Articles = () => {
           <ul>
             {articleList.map((article) => {
               return (
-                <section className='single-article'>
-                  <li key={article.article_id}>
+                <section key={article.article_id} className='single-article'>
+                  <li>
                     <Link to={`/articles/${article.article_id}`}>
                       <div className='author-topic'>
                         <h3>Author: {article.author}</h3>
