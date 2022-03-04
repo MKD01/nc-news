@@ -14,6 +14,7 @@ const Login = () => {
     event.preventDefault();
     let username = event.target.username.value;
     getUserByUsername(username).then((res) => {
+      console.log(res);
       setCurrentUser(res);
     });
   };

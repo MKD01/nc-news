@@ -5,13 +5,15 @@ const api = axios.create({
 });
 
 export const getUserByUsername = (username) => {
-  return api.get(`/users/${username}`).then((res) => {
-    console.log(res, "<------------");
-    if (!res) {
+  return api
+    .get(`/users/${username}`)
+    .then((res) => {
+      return res.data.user;
+    })
+    .catch((err) => {
+      console.log(res, "<------------");
       alert("Username does not exist, please try again");
-    }
-    return res.data.user;
-  });
+    });
 };
 
 export const getArticles = (topic, sort_by, order_by, p) => {
