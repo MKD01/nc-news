@@ -16,6 +16,8 @@ const Login = () => {
     getUserByUsername(username).then((res) => {
       if (res) {
         setCurrentUser(res);
+      } else {
+        event.target.username.value = "";
       }
     });
   };
