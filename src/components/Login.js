@@ -1,6 +1,6 @@
-import React, { useContext, useState } from 'react';
-import { UserContext } from '../contexts/Users';
-import { getUserByUsername } from '../utils/api';
+import React, { useContext, useState } from "react";
+import { UserContext } from "../contexts/Users";
+import { getUserByUsername } from "../utils/api";
 
 const Login = () => {
   const { setCurrentUser } = useContext(UserContext);
@@ -14,23 +14,28 @@ const Login = () => {
     event.preventDefault();
     let username = event.target.username.value;
     getUserByUsername(username).then((res) => {
-      setCurrentUser(res);
+      if (res) {
+        console.log(res, "<--------");
+        setCurrentUser(res);
+      } else {
+        alert("Username does not exist, please try again");
+      }
     });
   };
 
   const registerForm = () => {
     if (registerSelected) {
       return (
-        <div className="register">
+        <div className='register'>
           <form>
             <label>
-              <input id="name" placeholder="Name" required></input>
+              <input id='name' placeholder='Name' required></input>
             </label>
             <label>
-              <input id="username" placeholder="Username" required></input>
+              <input id='username' placeholder='Username' required></input>
             </label>
             <label>
-              <input id="avatar_url" placeholder="Avatar Url"></input>
+              <input id='avatar_url' placeholder='Avatar Url'></input>
             </label>
             <button>Register</button>
           </form>
@@ -40,20 +45,20 @@ const Login = () => {
   };
 
   return (
-    <div className="login">
+    <div className='login'>
       <h1>Login</h1>
       <form
-        id="login-form"
+        id='login-form'
         onSubmit={(event) => {
           loginHandler(event);
         }}
       >
         <label>
-          <input id="username" placeholder="Username" required></input>
+          <input id='username' placeholder='Username' required></input>
         </label>
         <button>Login</button>
       </form>
-      <button id="create-new-account-button" onClick={registerHandler}>
+      <button id='create-new-account-button' onClick={registerHandler}>
         Create New Account
       </button>
       {registerForm()}
