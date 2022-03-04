@@ -6,7 +6,7 @@
 
 # Front-End
 
-- **Front-End - Hosted link:** ---- need link ---
+- **Front-End - Hosted link:** https://mkd-nc-news.netlify.app/
 
 # Back-End
 
@@ -19,13 +19,13 @@
 
 This app was built using React.js, and styled with Sass.
 
-There is a back-end API version of this app, which this app connects to and interacts with, available at: https://accessapp-be.herokuapp.com/api/
+There is a back-end API version of this app, which this app connects to and interacts with, available at: https://mkd-nc-news.herokuapp.com/api
 
 # How to run this project locally
 
 ## Minimum requirements:
 
-- In order to run this project, please ensure you have `Node` installed, at least version v16.x onwards.
+- In order to run this project, please ensure you have `Node` version v16.x onwards.
 
 ## Clone the repo:
 
