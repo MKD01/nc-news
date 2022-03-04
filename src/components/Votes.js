@@ -21,11 +21,7 @@ const Votes = ({ component_name, votes, component_id }) => {
 
   const DownVotesHandler = () => {
     let voteAmount = -1;
-    if (downVoteBtn) {
-      voteAmount += 2;
-      setDownVoteBtn(false);
-      setVotesChange((currValue) => currValue + 1);
-    } else if (upVoteBtn) {
+    if (upVoteBtn) {
       voteAmount--;
       setUpVoteBtn(false);
       setVotesChange((currValue) => currValue - 2);
