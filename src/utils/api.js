@@ -1,11 +1,15 @@
-import axios from 'axios';
+import axios from "axios";
 
 const api = axios.create({
-  baseURL: 'https://mkd-nc-news.herokuapp.com/api',
+  baseURL: "https://mkd-nc-news.herokuapp.com/api",
 });
 
 export const getUserByUsername = (username) => {
   return api.get(`/users/${username}`).then((res) => {
+    console.log(res, "<------------");
+    if (!res) {
+      alert("Username does not exist, please try again");
+    }
     return res.data.user;
   });
 };

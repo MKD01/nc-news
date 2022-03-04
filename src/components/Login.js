@@ -14,12 +14,7 @@ const Login = () => {
     event.preventDefault();
     let username = event.target.username.value;
     getUserByUsername(username).then((res) => {
-      if (res) {
-        console.log(res, "<--------");
-        setCurrentUser(res);
-      } else {
-        alert("Username does not exist, please try again");
-      }
+      setCurrentUser(res);
     });
   };
 
