@@ -16,6 +16,7 @@ const Login = () => {
     getUserByUsername(username).then((res) => {
       if (res) {
         setCurrentUser(res);
+        localStorage.setItem("username", JSON.stringify(res));
       } else {
         event.target.username.value = "";
       }
