@@ -11,7 +11,7 @@ export const getUserByUsername = (username) => {
       return res.data.user;
     })
     .catch((err) => {
-      console.log(res, "<------------");
+      console.log(err, "<------------");
       alert("Username does not exist, please try again");
     });
 };
