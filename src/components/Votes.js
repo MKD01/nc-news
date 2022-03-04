@@ -7,7 +7,6 @@ const Votes = ({ component_name, votes, component_id }) => {
   const [downVoteBtn, setDownVoteBtn] = useState(false);
 
   const upVotesHandler = () => {
-    setUpVoteBtn(true);
     let voteAmount = 1;
     if (downVoteBtn) {
       voteAmount++;
@@ -16,19 +15,24 @@ const Votes = ({ component_name, votes, component_id }) => {
     } else {
       setVotesChange((currValue) => currValue + 1);
     }
+    setUpVoteBtn(true);
     patchComponentVotes(component_name, component_id, voteAmount);
   };
 
   const DownVotesHandler = () => {
-    setDownVoteBtn(true);
     let voteAmount = -1;
-    if (upVoteBtn) {
+    if (downVoteBtn) {
+      voteAmount += 2;
+      setDownVoteBtn(false);
+      setVotesChange((currValue) => currValue + 1);
+    } else if (upVoteBtn) {
       voteAmount--;
       setUpVoteBtn(false);
       setVotesChange((currValue) => currValue - 2);
     } else {
       setVotesChange((currValue) => currValue - 1);
     }
+    setDownVoteBtn(true);
     patchComponentVotes(component_name, component_id, voteAmount);
   };
 
