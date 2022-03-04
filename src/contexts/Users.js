@@ -3,9 +3,14 @@ import { createContext, useState } from "react";
 export const UserContext = createContext();
 
 export const UserProvider = (props) => {
+  const [loggedInCheck, setLoggedInCheck] = useState(true);
   const [currentUser, setCurrentUser] = useState({});
-  const LoggedInCheck = JSON.parse(localStorage.getItem("isLoggedIn"));
-  console.log(LoggedInCheck);
+  const loggedInUser = JSON.parse(localStorage.getItem("username"));
+
+  if (loggedInUser && loggedInCheck) {
+    setLoggedInCheck(false);
+    setCurrentUser(loggedInUser);
+  }
 
   const isLoggedIn = currentUser.username !== undefined;
 
