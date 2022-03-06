@@ -38,7 +38,7 @@ $ cd nc-news
 
 ## Install dependencies:
 
-- Required dependencies will be pulled from the `package.json` file. In your teminal:
+- Required dependencies will be pulled from the `package.json` file. In your terminal:
 
 ```
 $ npm install
