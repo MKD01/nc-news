@@ -33,7 +33,7 @@ There is a back-end API version of this app, which this app connects to and inte
 
 ```
 $ git clone https://github.com/MKD01/nc-news.git
-$ cd accessapp-fe
+$ cd nc-news
 ```
 
 ## Install dependencies:
