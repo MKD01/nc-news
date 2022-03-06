@@ -32,7 +32,7 @@ There is a back-end API version of this app, which this app connects to and inte
 - In your teminal:
 
 ```
-$ git clone https://github.com/MKD01/accessapp-fe.git
+$ git clone https://github.com/MKD01/nc-news.git
 $ cd accessapp-fe
 ```
 
